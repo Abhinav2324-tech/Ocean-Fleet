@@ -9,24 +9,32 @@ public class Main {
         // Create VesselUtil object
         VesselUtil vesselUtil = new VesselUtil();
 
-        // Create vessel objects
-        Vessel vessel1 = new Vessel("V001", "Sea King", 25.5, "Cargo");
-        Vessel vessel2 = new Vessel("V002", "Ocean Star", 18.0, "Tanker");
-        Vessel vessel3 = new Vessel("V003", "Wave Rider", 22.3, "Cruise");
+        // Add vessel records
+        vesselUtil.addVesselPerformance(
+                new Vessel("V001", "Sea King", 25.5, "Cargo")
+        );
 
-        // Add vessels to the list
-        vesselUtil.addVesselPerformance(vessel1);
-        vesselUtil.addVesselPerformance(vessel2);
-        vesselUtil.addVesselPerformance(vessel3);
+        vesselUtil.addVesselPerformance(
+                new Vessel("V002", "Ocean Star", 18.0, "Tanker")
+        );
 
-        // Display all stored vessels
-        for (Vessel vessel : vesselUtil.getVesselList()) {
+        vesselUtil.addVesselPerformance(
+                new Vessel("V003", "Wave Rider", 22.3, "Cruise")
+        );
+
+        // Search for a vessel using its ID
+        Vessel vessel = vesselUtil.getVesselById("V002");
+
+        // Display vessel details if found
+        if (vessel != null) {
             System.out.println(
                     vessel.getVesselId() + " | " +
                             vessel.getVesselName() + " | " +
                             vessel.getVesselType() + " | " +
                             vessel.getAverageSpeed() + " knots"
             );
+        } else {
+            System.out.println("Vessel Id V002 not found.");
         }
     }
 }

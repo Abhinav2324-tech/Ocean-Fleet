@@ -4,20 +4,12 @@ package com.bridgelabz;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
- * Use Case 2: Store Vessel Records Using List
- *
- * This class stores multiple Vessel objects using Java Collections.
- * It maintains a list of vessels and provides a method to add
- * vessel performance records to the list.
- */
-
 public class VesselUtil {
 
     // List to store vessel objects
     private List<Vessel> vesselList;
 
-    // Constructor to initialize the vessel list
+    // Constructor to initialize the list
     public VesselUtil() {
         vesselList = new ArrayList<>();
     }
@@ -32,8 +24,24 @@ public class VesselUtil {
         this.vesselList = vesselList;
     }
 
-    // Method to add a vessel to the list
+    // UC2: Add vessel performance details
     public void addVesselPerformance(Vessel vessel) {
         vesselList.add(vessel);
+    }
+
+    // UC3: Search and return a vessel by its ID
+    public Vessel getVesselById(String vesselId) {
+
+        // Traverse all vessels in the list
+        for (Vessel vessel : vesselList) {
+
+            // Compare vessel IDs (case-sensitive)
+            if (vessel.getVesselId().equals(vesselId)) {
+                return vessel;
+            }
+        }
+
+        // Return null if no matching vessel is found
+        return null;
     }
 }
