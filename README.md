@@ -13,3 +13,8 @@ Creates a `Vessel` model class to represent vessel information, including vessel
 
 ### Description
 Implements the `VesselUtil` class to manage multiple vessel performance records using Java Collections. The class maintains a private `List<Vessel>` and provides an `addVesselPerformance()` method to add vessel objects dynamically using an `ArrayList`.
+
+## Use Case 3: Retrieve Vessel by Vessel ID
+
+### Description
+Implements the `getVesselById()` method in the `VesselUtil` class to search for a vessel using its unique vessel ID. The method performs a case-sensitive linear search through the vessel list and returns the matching `Vessel` object or `null` if no match is found.
