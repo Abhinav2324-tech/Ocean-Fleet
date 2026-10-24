@@ -23,3 +23,8 @@ Implements the `getVesselById()` method in the `VesselUtil` class to search for 
 
 ### Description
 Implements the `getHighPerformanceVessels()` method in the `VesselUtil` class to identify vessels with the highest average speed. The method traverses the vessel list to determine the maximum speed and returns all vessels matching that speed, including multiple vessels in the case of a tie.
+
+## Use Case 5: Integrate User Interaction (Console App)
+
+### Description
+Implements the `UserInterface` class to accept vessel performance details through console input using `Scanner`. The program parses colon-separated vessel data, creates and stores `Vessel` objects using `VesselUtil`, retrieves vessels by their IDs, and displays all vessels with the highest average speed.
