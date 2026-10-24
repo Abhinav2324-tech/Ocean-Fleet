@@ -1,6 +1,7 @@
 
 import com.bridgelabz.Vessel;
 import com.bridgelabz.VesselUtil;
+import java.util.List;
 
 public class Main {
 
@@ -19,22 +20,27 @@ public class Main {
         );
 
         vesselUtil.addVesselPerformance(
-                new Vessel("V003", "Wave Rider", 22.3, "Cruise")
+                new Vessel("V003", "Wave Rider", 25.5, "Cruise")
         );
 
-        // Search for a vessel using its ID
-        Vessel vessel = vesselUtil.getVesselById("V002");
+        vesselUtil.addVesselPerformance(
+                new Vessel("V004", "Blue Pearl", 22.3, "Cargo")
+        );
 
-        // Display vessel details if found
-        if (vessel != null) {
+        // Retrieve high-performance vessels
+        List<Vessel> highPerformanceVessels =
+                vesselUtil.getHighPerformanceVessels();
+
+        // Display the high-performance vessels
+        System.out.println("High performance vessels are");
+
+        for (Vessel vessel : highPerformanceVessels) {
             System.out.println(
                     vessel.getVesselId() + " | " +
                             vessel.getVesselName() + " | " +
                             vessel.getVesselType() + " | " +
                             vessel.getAverageSpeed() + " knots"
             );
-        } else {
-            System.out.println("Vessel Id V002 not found.");
         }
     }
 }
