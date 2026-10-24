@@ -18,3 +18,8 @@ Implements the `VesselUtil` class to manage multiple vessel performance records 
 
 ### Description
 Implements the `getVesselById()` method in the `VesselUtil` class to search for a vessel using its unique vessel ID. The method performs a case-sensitive linear search through the vessel list and returns the matching `Vessel` object or `null` if no match is found.
+
+## Use Case 4: Identify High-Performance Vessels
+
+### Description
+Implements the `getHighPerformanceVessels()` method in the `VesselUtil` class to identify vessels with the highest average speed. The method traverses the vessel list to determine the maximum speed and returns all vessels matching that speed, including multiple vessels in the case of a tie.
