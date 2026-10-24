@@ -6,10 +6,10 @@ import java.util.List;
 
 public class VesselUtil {
 
-    // List to store vessel objects
+    // Store vessel records
     private List<Vessel> vesselList;
 
-    // Constructor to initialize the vessel list
+    // Initialize the vessel list
     public VesselUtil() {
         vesselList = new ArrayList<>();
     }
@@ -24,12 +24,12 @@ public class VesselUtil {
         this.vesselList = vesselList;
     }
 
-    // UC2: Add vessel performance details
+    // Add vessel performance details
     public void addVesselPerformance(Vessel vessel) {
         vesselList.add(vessel);
     }
 
-    // UC3: Retrieve a vessel by its ID
+    // Retrieve vessel by its ID
     public Vessel getVesselById(String vesselId) {
 
         for (Vessel vessel : vesselList) {
@@ -41,34 +41,35 @@ public class VesselUtil {
         return null;
     }
 
-    // UC4: Retrieve vessels having the highest average speed
+    // Retrieve all vessels having the highest average speed
     public List<Vessel> getHighPerformanceVessels() {
 
-        // Create a list to store high-performance vessels
         List<Vessel> highPerformanceVessels = new ArrayList<>();
 
-        // Return an empty list if no vessels are available
+        // Return empty list when no records exist
         if (vesselList.isEmpty()) {
             return highPerformanceVessels;
         }
 
-        // Find the highest average speed
-        double maxSpeed = vesselList.get(0).getAverageSpeed();
+        double maxSpeed = Double.NEGATIVE_INFINITY;
 
+        // Find maximum speed and collect matching vessels
         for (Vessel vessel : vesselList) {
-            if (vessel.getAverageSpeed() > maxSpeed) {
-                maxSpeed = vessel.getAverageSpeed();
-            }
-        }
 
-        // Add all vessels having the highest speed
-        for (Vessel vessel : vesselList) {
-            if (vessel.getAverageSpeed() == maxSpeed) {
+            double currentSpeed = vessel.getAverageSpeed();
+
+            if (currentSpeed > maxSpeed) {
+
+                maxSpeed = currentSpeed;
+                highPerformanceVessels.clear();
+                highPerformanceVessels.add(vessel);
+
+            } else if (currentSpeed == maxSpeed) {
+
                 highPerformanceVessels.add(vessel);
             }
         }
 
-        // Return the list of high-performance vessels
         return highPerformanceVessels;
     }
 }
