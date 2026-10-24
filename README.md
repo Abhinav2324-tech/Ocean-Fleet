@@ -28,3 +28,8 @@ Implements the `getHighPerformanceVessels()` method in the `VesselUtil` class to
 
 ### Description
 Implements the `UserInterface` class to accept vessel performance details through console input using `Scanner`. The program parses colon-separated vessel data, creates and stores `Vessel` objects using `VesselUtil`, retrieves vessels by their IDs, and displays all vessels with the highest average speed.
+
+## Use Case 6: Refactor Using OOPS Principles
+
+### Description
+Refactors the OceanFleet application into a clean, modular, object-oriented design by separating vessel data, business operations, and console interaction. The `Vessel` class encapsulates vessel attributes, `VesselUtil` manages vessel storage, searching, and high-performance identification, and `UserInterface` handles user input and output. The implementation demonstrates encapsulation, abstraction, separation of concerns, the Single Responsibility Principle, and code reusability.
